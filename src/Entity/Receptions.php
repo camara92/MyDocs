@@ -198,4 +198,9 @@ class Receptions
 
         return $this;
     }
+    public function __toString()
+    {
+        return $this->getdate();
+    }
+
 }

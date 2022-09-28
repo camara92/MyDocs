@@ -31,7 +31,7 @@ class ReceptionsType extends AbstractType
             [
                 'label' => 'Valider',
                 'attr' => [
-                    'class' => 'btn btn-success btn-block'
+                    'class' => 'btn btn-success btn-block w-100 p-2 mt-2'
                 ]
             ]
             )
