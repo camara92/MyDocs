@@ -16,6 +16,7 @@ h2 {
   html, body {
     margin: 0;
     height: 100%;
+
   }
   
   * {
@@ -451,46 +452,163 @@ ul.list-links li {
   }
 }
 // end footer 
-// slider home page with js 
-main { 
-  max-width: 1100px; 
-    height: 400px; 
-    margin: auto; 
-    font-family: arial; 
-      position: relative; 
-    }
-    
-    #slider { 
-    width: 100%; 
-    height: 100%; 
-    overflow: hidden; 
-      position: relative; 
-    }
-    .slide { 
-    width: 100%; 
-    height: 100%; 
-    position: absolute; 
-      text-align: center;
-      left: 100%;
-      transition: left 1s;
-    } 
-    .button { position: absolute;
-      padding: 10px; 
-      z-index:10;
-      background: black; 
-      color: white; 
-    }
-    #next.button { 
-    right: 0;
-    }
-    
-    #slide1 { 
-    background-image: url("http://pre01.deviantart.net/37c2/th/pre/i/2015/179/0/1/nightengale_sky_by_pr164-d8z4lht.jpg");
-    left:0;
-    }
-    
-    #slide2 { 
-    background-image: url("http://pre13.deviantart.net/3bc5/th/pre/i/2015/143/1/f/sector_asainia_by_pr164-d8uiv39.jpg");}
-    
-    #slide3 { 
-    background-image: url("http://pre01.deviantart.net/7745/th/pre/f/2015/165/6/d/nebula_amarnthe_by_pr164-d8xak7o.jpg") }
+// card 
+/* Import font */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+/* Variables */
+$black: #000;
+$white: #fff;
+$greyLight: #e1e3e5;
+$greyMedium: #8a959e;
+$greyDark: #323a45;
+$purple: #9b59b6;
+$orange: #ff6d3a;
+$blue: #3498db;
+$defaultTransition: all 250ms ease-in-out;
+
+html * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* set rem text size and styling */
+html {
+	font-size: 62.5%;
+}
+// body {
+// 	font-size: 18px;
+// 	font-size: 1.8rem;
+// }
+// html,
+// body {
+// 	font-family: 'Open Sans', sans-serif;
+// 	font-weight: 300;
+// 	color: $greyDark;
+// 	height: 100%;
+// }
+
+.cards {
+	padding: 20px;
+	max-width: 100vw;
+	@media (min-width: 900px) {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+	}
+
+	&__item {
+		flex: 0 1 auto;
+		display: block;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		color: $greyDark;
+		height: auto;
+		text-align: left;
+		text-decoration: none;
+		border-top: 3px solid $purple;
+		border-right: 1px solid $greyLight;
+		border-bottom: 1px solid $greyLight;
+		border-left: 1px solid $greyLight;
+		padding: 40px 50px;
+		margin: 20px;
+		transition: $defaultTransition;
+		width: auto;
+		@media (min-width: 900px) {
+			width: calc(100% / 3);
+		}
+		&:hover,
+		&:focus {
+			background: $purple;
+			border-color: $purple;
+			color: $white;
+			outline: 0;
+			.cards__date {
+				color: rgba($white, 0.6);
+			}
+			.cards__title {
+				color: $white;
+			}
+			.cards__more {
+				color: $white;
+				border-bottom: solid 1px rgba($white, 0.6);
+			}
+		}
+		&:nth-of-type(2) {
+			border-top: 3px solid $orange;
+			&:hover,
+			&:focus {
+				background: $orange;
+				border-color: $orange;
+			}
+		}
+		&:nth-of-type(3) {
+			border-top: 3px solid $blue;
+			&:hover,
+			&:focus {
+				background: $blue;
+				border-color: $blue;
+			}
+		}
+	}
+
+	&__date {
+		display: block;
+		color: $greyMedium;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		line-height: 2.4rem;
+		font-weight: 700;
+		transition: $defaultTransition;
+	}
+
+	&__title {
+		color: $greyDark;
+		font-weight: 300;
+		margin: 0 0 30px 0;
+		transition: $defaultTransition;
+		font-size: 2rem;
+		line-height: 3rem;
+		@media (min-width: 1200px) {
+			font-size: 2.4rem;
+			line-height: 3.5rem;
+		}
+	}
+
+	&__more {
+		margin-top: auto;
+		color: $greyMedium;
+		display: inline-block;
+		border-bottom: 1px solid $greyLight;
+		font-size: 1.4rem;
+		line-height: 1.6rem;
+		font-weight: 400;
+		transition: $defaultTransition;
+	}
+
+}
+
+
+
+
+
+// css fs-4
+@media (min-width: 1200px){
+.fs-4 {
+    font-size: 3rem !important;
+}
+}
+p{
+  font-size: 15px;
+}
