@@ -5,16 +5,14 @@
 {% block body %}
 
 
-<div class="example-wrapper container">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<main> 
+  <div id="slider"> 
+    <a href="#" class="button" id="next"> Next </a>
+    <a href="#" class="button" id="previous"> Previous </a>
+    <div class="slide" id="slide1"> Slide One </div> 
+    <div class="slide" id="slide2"> Slide Two </div>
+    <div class="slide" id="slide3"> Slide Three</div>
+  </div> 
+</main> 
 
-    This friendly message is coming from:
-    <ul class="border">
-        <li>Your controller at <code><a href="{{ 'C:/Users/daoud/MyDocs/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/daoud/MyDocs/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
-<p> daouda <i class="fas fa-duotone fa-address-book"></i></p>
-<i class="fab fa-accusoft"></i>
-<i class="fas fa-address-book"></i>
 {% endblock %}
